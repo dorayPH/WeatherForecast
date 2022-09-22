@@ -7,8 +7,18 @@
         <entry key="..\:/Users/dorothy.jayne.suero/Desktop/WeatherForecast/app/src/main/res/drawable/close.xml" value="0.1205" />
         <entry key="..\:/Users/dorothy.jayne.suero/Desktop/WeatherForecast/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1225" />
         <entry key="..\:/Users/dorothy.jayne.suero/Desktop/WeatherForecast/app/src/main/res/drawable/ic_refresh_24dp.xml" value="0.1005" />
-        <entry key="..\:/Users/dorothy.jayne.suero/Desktop/WeatherForecast/app/src/main/res/layout/activity_main.xml" value="0.4466666666666667" />
-        <entry key="..\:/Users/dorothy.jayne.suero/Desktop/WeatherForecast/app/src/main/res/layout/dialog_custom_progress.xml" value="0.11820652173913043" />
+        <entry key="..\:/Users/dorothy.jayne.suero/Desktop/WeatherForecast/app/src/main/res/layout-sw600dp/activity_main.xml" value="0.272265625" />
+        <entry key="..\:/Users/dorothy.jayne.suero/Desktop/WeatherForecast/app/src/main/res/layout/activity_city.xml" value="0.36302083333333335" />
+        <entry key="..\:/Users/dorothy.jayne.suero/Desktop/WeatherForecast/app/src/main/res/layout/activity_city_data_access_observer.xml" value="0.36302083333333335" />
+        <entry key="..\:/Users/dorothy.jayne.suero/Desktop/WeatherForecast/app/src/main/res/layout/activity_five_days_forecast.xml" value="0.36302083333333335" />
+        <entry key="..\:/Users/dorothy.jayne.suero/Desktop/WeatherForecast/app/src/main/res/layout/activity_fivedaysforecast.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/dorothy.jayne.suero/Desktop/WeatherForecast/app/src/main/res/layout/activity_future_adapter.xml" value="0.36302083333333335" />
+        <entry key="..\:/Users/dorothy.jayne.suero/Desktop/WeatherForecast/app/src/main/res/layout/activity_future_weather.xml" value="0.36302083333333335" />
+        <entry key="..\:/Users/dorothy.jayne.suero/Desktop/WeatherForecast/app/src/main/res/layout/activity_main.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/dorothy.jayne.suero/Desktop/WeatherForecast/app/src/main/res/layout/activity_manage_cities.xml" value="0.36302083333333335" />
+        <entry key="..\:/Users/dorothy.jayne.suero/Desktop/WeatherForecast/app/src/main/res/layout/city_list_item.xml" value="0.36302083333333335" />
+        <entry key="..\:/Users/dorothy.jayne.suero/Desktop/WeatherForecast/app/src/main/res/layout/dialog_custom_progress.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/dorothy.jayne.suero/Desktop/WeatherForecast/app/src/main/res/layout/list_item.xml" value="0.36302083333333335" />
         <entry key="..\:/Users/dorothy.jayne.suero/Desktop/WeatherForecast/app/src/main/res/menu/menu_main.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/dorothy.jayne.suero/Desktop/WeatherForecast/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1225" />
         <entry key="..\:/Users/dorothy.jayne.suero/Desktop/WeatherForecast/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1225" />
