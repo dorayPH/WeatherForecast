@@ -11,13 +11,13 @@
     android:background="@drawable/morning"
     android:orientation="vertical"
     android:padding="@dimen/main_screen_content_padding"
-    tools:context=".MainActivity">
+    tools:context=".Activity.MainActivity">
 
     <Switch
         android:id="@+id/darkTheme"
         android:layout_width="377dp"
         android:layout_height="wrap_content"
-        android:text="Night Mode"
+        android:text="Night Mode Switch"
         android:textSize="17dp"
         android:textStyle="bold" />
 
@@ -290,12 +290,25 @@
                         android:textColor="@color/secondary_text_color"
                         android:textSize="@dimen/value_text_size"
                         tools:text="Country" />
+
+                    // degree should be showed here also
+
+                    <TextView
+                        android:id="@+id/tv_temp2"
+                        android:layout_width="match_parent"
+                        android:layout_height="58dp"
+                        android:gravity="end"
+                        android:textColor="@color/third_text_color"
+                        android:textSize="40sp"
+                        android:textStyle="bold"
+                        tools:text="Temperature" />
+
                 </LinearLayout>
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="9dp"
+                android:layout_height="12dp"
                 android:layout_margin="@dimen/divider_margin"
                 android:background="@color/divider_background" />
 
@@ -353,6 +366,24 @@
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/five_days"
+        android:layout_width="364dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/sunrise_marginTop"
+        android:background="@color/divider_background"
+        android:text="VIEW FIVE DAYS FORECAST"
+        android:textColor="@color/secondary_text_color" />
+
+    <Button
+        android:id="@+id/manageCity"
+        android:layout_width="364dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/sunrise_marginTop"
+        android:background="@color/divider_background"
+        android:text="FAVORITE LOCATION"
+        android:textColor="@color/secondary_text_color" />
 
 </LinearLayout>
 </layout>

@@ -1,7 +1,6 @@
-package com.example.weatherforecast
+package com.example.weatherforecast.utilities
 
 import android.content.Context
-import android.location.Location
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build

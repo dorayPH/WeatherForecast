@@ -1,4 +1,4 @@
-package com.example.weatherforecast
+package com.example.weatherforecast.Activity
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -20,8 +20,10 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
+import com.example.weatherforecast.utilities.Constants
+import com.example.weatherforecast.R
 import com.example.weatherforecast.databinding.ActivityMainBinding
-import com.example.weatherforecast.models.WeatherResponse
+import com.example.weatherforecast.CurrentForecastModel.WeatherResponse
 import com.example.weatherforecast.network.WeatherService
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
@@ -71,6 +73,15 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        bindind.fiveDays.setOnClickListener{
+            val intent = Intent(this@MainActivity, fiveDaysForecast::class.java)
+            startActivity(intent)
+        }
+
+//        bindind.manageCity.setOnClickListener{
+//            val intent = Intent(this@MainActivity, ManageCities::class.java)
+//            startActivity(intent)
+//        }
 
 
         modeSwitch = bindind.darkTheme as Switch
@@ -394,6 +405,7 @@ class MainActivity : AppCompatActivity() {
                 bindind.tvMain.text = weatherList.weather[i].main
                 bindind.tvMainDescription.text = weatherList.weather[i].description
                 bindind.tvTemp.text = weatherList.main.temp.toString() + getUnit(application.resources.configuration.locales.toString())
+                bindind.tvTemp2.text = weatherList.main.temp.toString() + getUnit(application.resources.configuration.locales.toString())
                 bindind.tvHumidity.text = weatherList.main.humidity.toString() + " per cent "
                 bindind.tvMin.text = weatherList.main.tempMin.toString() + " min "
                 bindind.tvMax.text = weatherList.main.tempMax.toString() + " max "
@@ -402,6 +414,7 @@ class MainActivity : AppCompatActivity() {
                 bindind.tvCountry.text = weatherList.sys.country
                 bindind.tvSunriseTime.text = unixTime(weatherList.sys.sunrise)
                 bindind.tvSunsetTime.text = unixTime(weatherList.sys.sunset)
+
 
                 when (weatherList.weather[i].icon) {
                     "01d" -> bindind.ivMain.setImageResource(R.drawable.sunny)
@@ -439,6 +452,87 @@ class MainActivity : AppCompatActivity() {
         sdf.timeZone = TimeZone.getDefault()
         return sdf.format(date)
     }
-}
+
+    fun getLocationWeather() {
+        if (Constants.isNetworkAvailable(this@MainActivity)) {
+            val retrofit: Retrofit = Retrofit.Builder()
+                .baseUrl(Constants.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+
+            val service: WeatherService =
+                retrofit.create<WeatherService>(WeatherService::class.java)
+            val listCall: Call<WeatherResponse> = service.getLocationWeather(
+                mLatitude, mLongitude, Constants.METRIC_UNIT,Constants.Location,Constants.APP_ID
+            )
+            showCustomProgressDialog()
+            listCall.enqueue(object : Callback<WeatherResponse> {
+                @RequiresApi(Build.VERSION_CODES.N)
+                @SuppressLint("SetTextI18n")
+                override fun onResponse(
+                    response: Response<WeatherResponse>,
+                    retrofit: Retrofit
+                ) {
+
+                    if (response.isSuccess) {
+                        hideProgressDialog()
+
+                        val weatherList: WeatherResponse = response.body()
+                        Log.i("Response Result", "$weatherList")
+
+                        val weatherResponseJsonString = Gson().toJson(weatherList)
+                        val editor = mSharedPreferences.edit()
+
+                        editor.putString(Constants.WEATHER_RESPONSE_DATA, weatherResponseJsonString)
+                        editor.apply()
+
+                        var location : String = weatherList.sys.country
+                        if (location == "PH") {
+                            setupUI()
+                        } else {
+                            Toast.makeText(
+                                this@MainActivity,
+                                "Invalid City",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
+
+                    } else {
+                        val sc = response.code()
+                        hideProgressDialog()
+                        when (sc) {
+                            400 -> {
+                                Log.e("Error 400", "Bad Request")
+                            }
+                            404 -> {
+                                Log.e("Error 404", "Not Found")
+                                Toast.makeText(
+                                    this@MainActivity,
+                                    "Invalid City",
+                                    Toast.LENGTH_LONG
+                                ).show()
+                            }
+                            else -> {
+                                Log.e("Error", "Generic Error")
+                            }
+                        }
+                    }
+                }
+                override fun onFailure(t: Throwable) {
+                    Log.e("Errorrrrr", t.message.toString())
+                    hideProgressDialog()
+                }
+            })
+        } else {
+            Toast.makeText(
+                this@MainActivity,
+                "No internet connection available.",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
+
+} //End Bracket
+
 
 

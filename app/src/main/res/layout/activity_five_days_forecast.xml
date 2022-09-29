@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
+        android:id="@+id/MainBG"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/fivedf"
+        android:orientation="vertical"
+        android:padding="@dimen/main_screen_content_padding"
+        tools:context=".Activity.MainActivity">
+
+        <TextView
+            android:id="@+id/five_days_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:background="@color/divider_background"
+            android:text="5 Days Weather Forecast"
+            android:textAlignment="center"
+            android:textColor="@color/secondary_text_color"
+            android:textSize="25sp"
+            android:textStyle="italic" />
+        <TextView
+            android:id="@+id/five_days_cityname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:background="@color/divider_background"
+            android:text="City Name"
+            android:textAlignment="center"
+            android:textColor="@color/colorCity2"
+            android:textSize="25sp"
+            android:textStyle="bold"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="103dp"
+            android:layout_marginStart="@dimen/card_view_marginStartEnd"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="@dimen/card_view_marginStartEnd"
+            android:background="@android:color/white"
+            app:cardBackgroundColor="#80000000"
+            app:cardCornerRadius="@dimen/card_view_corner_radius"
+            app:cardElevation="@dimen/card_view_elevation">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="@dimen/card_view_content_padding">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/day_one_icon"
+                        android:layout_width="85dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/identification_image_marginEnd"
+                        android:contentDescription="@string/image_contentDescription"
+                        app:srcCompat="@drawable/forecast" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/day_one_temp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:textColor="@color/third_text_color"
+                            android:textSize="30dp"
+                            android:textStyle="bold"
+                            tools:text="25 \u2103" />
+
+                        <TextView
+                            android:id="@+id/day_one_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:textColor="@color/secondary_text_color"
+                            android:textSize="@dimen/value_text_size"
+                            tools:text="Monday" />
+
+                        <TextView
+                            android:id="@+id/day_one_forecast"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:textColor="@color/purple"
+                            android:textSize="@dimen/value_text_size"
+                            android:textStyle="bold"
+                            tools:text="Weather Forecast Day 1" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="104dp"
+            android:layout_marginStart="@dimen/card_view_marginStartEnd"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="@dimen/card_view_marginStartEnd"
+            android:background="@android:color/white"
+            app:cardBackgroundColor="#80000000"
+            app:cardCornerRadius="@dimen/card_view_corner_radius"
+            app:cardElevation="@dimen/card_view_elevation">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="@dimen/card_view_content_padding">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/day_two_icon"
+                        android:layout_width="85dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/identification_image_marginEnd"
+                        android:contentDescription="@string/image_contentDescription"
+                        app:srcCompat="@drawable/forecast" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/day_twi_temp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:textColor="@color/third_text_color"
+                            android:textSize="30dp"
+                            android:textStyle="bold"
+                            tools:text="26 \u2103" />
+
+                        <TextView
+                            android:id="@+id/day_two_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:textColor="@color/secondary_text_color"
+                            android:textSize="@dimen/value_text_size"
+                            tools:text="Tuesday" />
+
+                        <TextView
+                            android:id="@+id/day_two_forecast"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:textColor="@color/purple"
+                            android:textSize="@dimen/value_text_size"
+                            android:textStyle="bold"
+                            tools:text="Weather Forecast Day 2" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="102dp"
+            android:layout_marginStart="@dimen/card_view_marginStartEnd"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="@dimen/card_view_marginStartEnd"
+            android:background="@android:color/white"
+            app:cardBackgroundColor="#80000000"
+            app:cardCornerRadius="@dimen/card_view_corner_radius"
+            app:cardElevation="@dimen/card_view_elevation">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="103dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="@dimen/card_view_content_padding">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/day_three_icon"
+                        android:layout_width="85dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/identification_image_marginEnd"
+                        android:contentDescription="@string/image_contentDescription"
+                        app:srcCompat="@drawable/forecast" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/day_three_temp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:textColor="@color/third_text_color"
+                            android:textSize="30dp"
+                            android:textStyle="bold"
+                            tools:text="27 \u2103" />
+
+                        <TextView
+                            android:id="@+id/day_three_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:textColor="@color/secondary_text_color"
+                            android:textSize="@dimen/value_text_size"
+                            tools:text="Wednesday" />
+
+                        <TextView
+                            android:id="@+id/day_three_forecast"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:textColor="@color/purple"
+                            android:textSize="@dimen/value_text_size"
+                            android:textStyle="bold"
+                            tools:text="Weather Forecast Day 3" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_marginStart="@dimen/card_view_marginStartEnd"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="@dimen/card_view_marginStartEnd"
+            android:background="@android:color/white"
+            app:cardBackgroundColor="#80000000"
+            app:cardCornerRadius="@dimen/card_view_corner_radius"
+            app:cardElevation="@dimen/card_view_elevation">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="99dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="@dimen/card_view_content_padding">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/day_four_icon"
+                        android:layout_width="85dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/identification_image_marginEnd"
+                        android:contentDescription="@string/image_contentDescription"
+                        app:srcCompat="@drawable/forecast" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/day_four_temp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:textColor="@color/third_text_color"
+                            android:textSize="30dp"
+                            android:textStyle="bold"
+                            tools:text="28 \u2103" />
+
+                        <TextView
+                            android:id="@+id/day_four_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:textColor="@color/secondary_text_color"
+                            android:textSize="@dimen/value_text_size"
+                            tools:text="Thursday" />
+
+                        <TextView
+                            android:id="@+id/day_four_forecast"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:textColor="@color/purple"
+                            android:textSize="@dimen/value_text_size"
+                            android:textStyle="bold"
+                            tools:text="Weather Forecast Day 4" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginStart="@dimen/card_view_marginStartEnd"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="@dimen/card_view_marginStartEnd"
+            android:background="@android:color/white"
+            app:cardBackgroundColor="#80000000"
+            app:cardCornerRadius="@dimen/card_view_corner_radius"
+            app:cardElevation="@dimen/card_view_elevation">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="@dimen/card_view_content_padding">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/day_five_icon"
+                        android:layout_width="85dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/identification_image_marginEnd"
+                        android:contentDescription="@string/image_contentDescription"
+                        app:srcCompat="@drawable/forecast" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/day_five_temp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:textColor="@color/third_text_color"
+                            android:textSize="30dp"
+                            android:textStyle="bold"
+                            tools:text="29 \u2103" />
+
+                        <TextView
+                            android:id="@+id/day_five_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:textColor="@color/secondary_text_color"
+                            android:textSize="@dimen/value_text_size"
+                            tools:text="Friday" />
+
+                        <TextView
+                            android:id="@+id/day_five_forecast"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:textColor="@color/purple"
+                            android:textSize="@dimen/value_text_size"
+                            android:textStyle="bold"
+                            tools:text="Weather Forecast Day 5" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</layout>
